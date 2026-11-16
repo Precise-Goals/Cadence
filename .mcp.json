@@ -1,0 +1,17 @@
+# .mcp.json — Cadence MCP Configuration
+# Preset: web-app + data-pipeline hybrid
+# Source: docs/Mcp.md, verified by docs/McpCheck.md Part A
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "transportType": "stdio"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "transportType": "stdio"
+    }
+  }
+}

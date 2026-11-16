@@ -1,0 +1,28 @@
+# generated-by: harness v1 | source: raw.md + interview
+project_type: web-app
+languages: [Python, JavaScript]
+frameworks: [Next.js, FastAPI, OR-Tools, SimPy]
+package_manager: bun + uv
+has_ui: true
+has_db: true
+has_network_integrations: true
+handles_sensitive_data: true
+deploy_target: cloud
+team_mode: team
+ci: github-actions
+parallelism: 5
+sprint_length: 1w
+confidence: 0.85
+enabled_roles:
+  - orchestrator
+  - po-spec
+  - designer
+  - tech-lead
+  - test-author
+  - builder
+  - reviewer
+  - security
+  - qa
+  - scribe
+  - librarian
+disabled_roles: []

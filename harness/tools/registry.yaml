@@ -1,0 +1,77 @@
+# generated-by: harness v1 | source: harness.md §10
+tools:
+  - name: file_read
+    kind: builtin
+    purpose: Read any file
+    allowed_roles: [all]
+    approval: auto
+  - name: file_write
+    kind: builtin
+    purpose: Write to owned paths
+    allowed_roles: [role-scoped]
+    approval: auto
+    guard: guard_paths.py
+  - name: bash
+    kind: bash
+    purpose: Run shell commands
+    allowed_roles: [builder, test-author, qa, security]
+    approval: auto
+    sandbox: sandbox.md
+  - name: git
+    kind: bash
+    purpose: Version control
+    allowed_roles: [orchestrator, builder]
+    approval: auto
+    forbid: ["push --force", "reset --hard origin"]
+  - name: web_fetch
+    kind: api
+    purpose: Fetch documentation and API references
+    allowed_roles: [po-spec, tech-lead, librarian]
+    approval: auto
+  - name: package_install
+    kind: bash
+    purpose: Add dependencies
+    allowed_roles: [builder]
+    approval: confirm
+  - name: deploy
+    kind: bash
+    purpose: Deploy to production
+    allowed_roles: []
+    approval: forbidden
+  - name: bun
+    kind: bash
+    purpose: JS package manager and runner
+    allowed_roles: [builder, test-author, qa]
+    approval: auto
+  - name: uv
+    kind: bash
+    purpose: Python package manager
+    allowed_roles: [builder, test-author, qa]
+    approval: auto
+
+mcp_servers:
+  - name: context7
+    tier: core
+    purpose: Version-specific library docs
+    allowed_roles: [all]
+    approval: auto
+  - name: github
+    tier: core
+    purpose: PRs, issues, CI status
+    allowed_roles: [orchestrator, reviewer, qa]
+    approval: auto
+  - name: semgrep
+    tier: core
+    purpose: SAST + secrets scan
+    allowed_roles: [security, reviewer, qa]
+    approval: auto
+  - name: playwright
+    tier: frontend
+    purpose: E2E testing, ARIA snapshots
+    allowed_roles: [test-author, qa]
+    approval: auto
+  - name: sequential-thinking
+    tier: optional
+    purpose: Reasoning scratchpad
+    allowed_roles: [all]
+    approval: auto

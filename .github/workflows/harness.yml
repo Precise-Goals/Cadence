@@ -1,0 +1,29 @@
+name: Harness G0
+on:
+  push:
+    paths:
+      - 'harness/**'
+      - 'scripts/**'
+      - 'tests/harness/**'
+      - 'AGENTS.md'
+      - 'docs/**'
+  pull_request:
+    paths:
+      - 'harness/**'
+      - 'scripts/**'
+      - 'tests/harness/**'
+
+jobs:
+  harness-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pytest
+        run: pip install pytest
+      - name: Run check_harness.py
+        run: python scripts/check_harness.py
+      - name: Run harness unit tests
+        run: pytest tests/harness/ -v

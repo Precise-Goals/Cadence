@@ -1,0 +1,32 @@
+[project]
+name = "cadence"
+version = "0.1.0"
+description = "AI-powered production planning & capacity optimization copilot for press-based manufacturing"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "ortools",
+    "simpy",
+    "scikit-learn",
+    "statsmodels",
+    "lightgbm",
+    "scipy",
+    "pandas",
+    "sqlalchemy",
+    "pytest",
+    "ruff",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "services"]
+pythonpath = [".", "services"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

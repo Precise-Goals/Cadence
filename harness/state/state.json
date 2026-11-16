@@ -1,0 +1,17 @@
+{
+  "_generated": "harness v1",
+  "harness_version": "1.0.0",
+  "profile": "web-app",
+  "derived_from": {"raw_md_sha": "d31873b48a73d8f74773e7f316a4417e5d34664d5947e3bdedcff07f23a76b03", "harness_md_sha": "c9da53430fb88c5e9ebad4db779a55fa20b0a22b3b1d500a53daae604d7db45f"},
+  "mode": "SCAFFOLD",
+  "sprint": 0,
+  "task_id": null,
+  "current_stage": "scaffold_complete",
+  "stages": {"scaffold": "done"},
+  "lanes": [],
+  "attempts": {},
+  "last_commit": "ae9e009",
+  "last_gate": {"name": "G0", "status": "pass", "at": "2026-11-17T03:11:59+05:30", "log": "harness/logs/session.log.md"},
+  "breaker": {"tripped": false, "reason": null},
+  "updated_at": "2026-11-17T03:12:30+05:30"
+}
